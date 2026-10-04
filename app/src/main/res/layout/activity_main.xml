@@ -120,7 +120,8 @@
                     android:background="@drawable/bg_account_item"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="12dp"
+                    android:id="@+id/btnEmail">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -161,7 +162,8 @@
                     android:background="@drawable/bg_account_item"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="12dp"
+                    android:id="@+id/btnPhone">
 
                     <ImageView
                         android:layout_width="24dp"
