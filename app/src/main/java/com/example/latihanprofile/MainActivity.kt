@@ -88,5 +88,23 @@ class MainActivity : AppCompatActivity() {
             val _roleIntent = Intent(this@MainActivity, RoleActivity::class.java)
             roleLauncher.launch(_roleIntent)
         }
+
+        val _switchPush = findViewById<com.google.android.material.switchmaterial.SwitchMaterial>(R.id.switchPush)
+        _switchPush.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                Toast.makeText(this, "Notifikasi Push Aktif", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Notifikasi Push NonAktif", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val _switchEmail = findViewById<com.google.android.material.switchmaterial.SwitchMaterial>(R.id.switchEmail)
+        _switchEmail.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                Toast.makeText(this, "Email Notifikasi Aktif", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Email Notifikasi NonAktif", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
