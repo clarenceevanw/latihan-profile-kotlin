@@ -356,8 +356,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            app:thumbTint="@color/white"
-                            app:trackTint="#6A5AE0" />
+                            app:thumbTint="@color/switch_thumb_selector"
+                            app:trackTint="@color/switch_track_selector" />
                     </LinearLayout>
 
                     <!--         Email Notifications           -->
@@ -403,13 +403,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            app:thumbTint="@color/white"
-                            app:trackTint="#6A5AE0" />
+                            app:thumbTint="@color/switch_thumb_selector"
+                            app:trackTint="@color/switch_track_selector" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
