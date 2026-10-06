@@ -5,37 +5,36 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@color/black"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/secNav"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/btnBack"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:padding="12dp"
-            android:scaleType="fitCenter"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Back"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/arrow"
             app:tint="@color/white" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginEnd="48dp"
+            android:layout_weight="1"
             android:text="Profile"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -43,27 +42,33 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- 2. SCROLLVIEW (DI ANTARA HEADER DAN BOTTOM NAV) -->
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/secNav"
-        app:layout_constraintStart_toStartOf="@id/secNav"
-        android:padding="8dp"
-        android:id="@+id/viewProfile">
+        android:id="@+id/viewProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secNav">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Profile Card-->
+            <!-- Profile Card -->
             <LinearLayout
+                android:id="@+id/secProfileCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
                 android:background="@drawable/bg_profile_card"
-                android:padding="20dp"
-                android:id="@+id/secProfileCard">
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
                 <ImageView
                     android:id="@+id/ivAvatar"
                     android:layout_width="64dp"
@@ -95,13 +100,13 @@
 
             <!-- Account Info Card -->
             <LinearLayout
+                android:id="@+id/secAccInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/bg_account_card"
                 android:orientation="vertical"
-                android:layout_marginTop="16dp"
-                android:padding="16dp"
-                android:id="@+id/secAccInfo">
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,17 +119,17 @@
 
                 <!-- ITEM EMAIL -->
                 <LinearLayout
+                    android:id="@+id/btnEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bg_account_item"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
-                    android:id="@+id/btnEmail">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -159,17 +164,17 @@
 
                 <!-- ITEM PHONE -->
                 <LinearLayout
+                    android:id="@+id/btnPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bg_account_item"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
-                    android:id="@+id/btnPhone">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -204,17 +209,17 @@
 
                 <!-- ITEM INSTITUTION -->
                 <LinearLayout
+                    android:id="@+id/btnSchool"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bg_account_item"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
-                    android:id="@+id/btnSchool">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -249,16 +254,16 @@
 
                 <!-- ITEM ROLE -->
                 <LinearLayout
+                    android:id="@+id/btnRole"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_account_item"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
-                    android:id="@+id/btnRole">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -291,11 +296,13 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
+            <!-- Notifications Section -->
             <LinearLayout
+                android:id="@+id/secNotifications"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:id="@+id/secNotifications"
                 android:orientation="vertical">
 
                 <TextView
@@ -303,17 +310,17 @@
                     android:layout_height="wrap_content"
                     android:text="Notifications"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                <!--        Notification Items        -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_account_card">
-                    <!--         Push Notifications           -->
+                    android:background="@drawable/bg_account_card"
+                    android:orientation="vertical">
+
+                    <!-- Push Notifications -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -351,6 +358,7 @@
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
+
                         <com.google.android.material.switchmaterial.SwitchMaterial
                             android:id="@+id/switchPush"
                             android:layout_width="wrap_content"
@@ -360,7 +368,7 @@
                             app:trackTint="@color/switch_track_selector" />
                     </LinearLayout>
 
-                    <!--         Email Notifications           -->
+                    <!-- Email Notifications -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -398,6 +406,7 @@
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
+
                         <com.google.android.material.switchmaterial.SwitchMaterial
                             android:id="@+id/switchEmail"
                             android:layout_width="wrap_content"
@@ -410,5 +419,20 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_nav"
+        app:elevation="8dp"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemRippleColor="@null"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
